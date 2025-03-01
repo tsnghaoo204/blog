@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background: white;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snowfall linear infinite;
+        }
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        .container {
+            margin-top: 50px;
+            animation: fadeIn 2s ease-in-out;
+            padding: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .description {
+            color: #ffffff;
+            font-size: 18px;
+            margin: 10px auto;
+            max-width: 500px;
+        }
+        .links {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            width: 220px;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+        }
+        .links a:hover {
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+        @media (max-width: 600px) {
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            .description {
+                font-size: 16px;
+                max-width: 90%;
+            }
+            .links a {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function createSnowflakes() {
+            for (let i = 0; i < 50; i++) {
+                let snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = Math.random() * window.innerWidth + 'px';
+                snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                snowflake.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(snowflake);
+            }
+        }
+        createSnowflakes();
+    </script>
+    <div class="container">
+        <img src="img/avt.jpg" alt="Your Avatar" class="avatar">
+        <h1>Welcome to My Website</h1>
+        <p class="description">Hi, I'm Tran Song Hao. I'm passionate about technology, coding, and creativity. Follow me on my social media!</p>
+        <div class="links">
+            <a href="https://www.facebook.com/trshao" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/tsnghaoo" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@trshaoo" target="_blank">Tiktok</a>
+        </div>
+    </div>
+</body>
+</html>
